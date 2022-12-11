@@ -1,29 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
-
 import numpy as np
 import pandas as pd
 import plotly.express as px
+
 # Make the width of all shells wider
 from IPython.display import display, HTML
 display(HTML("<style>.container { width:90% !important; }</style>"))
 
 
-# In[18]:
-
-
 grades = pd.read_csv('Files\grades.txt', delimiter = '\t')
-#fig = go.Figure()
 fig = px.histogram(grades, x='Grade')
 fig.update_layout(xaxis_title='Grades', yaxis_title='N',width = 900, height = 600)
 fig.show()
-
-
-# In[3]:
-
 
 for i in range(len(grades)):
     mult = grades['ECTS']*grades['Grade']
@@ -33,8 +20,6 @@ for i in range(len(grades)):
     
 print('Your final grade is:', round(sum_mult/sum_ECTS,2))
 
-
-# In[ ]:
 
 
 
