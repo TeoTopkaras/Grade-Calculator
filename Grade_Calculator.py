@@ -7,7 +7,7 @@ from IPython.display import display, HTML
 display(HTML("<style>.container { width:90% !important; }</style>"))
 
 
-grades = pd.read_csv('Files\grades.txt', delimiter = '\t')
+grades = pd.read_csv('Files\INPUT_NAME.txt', delimiter = '\t')
 fig = px.histogram(grades, x='Grade')
 fig.update_layout(xaxis_title='Grades', yaxis_title='N',width = 900, height = 600)
 fig.show()
